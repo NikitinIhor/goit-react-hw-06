@@ -7,7 +7,7 @@ import css from "./Contact.module.css";
 export default function Contact({ data: { id, name, number } }) {
   const dispatch = useDispatch();
 
-  const handleToDeleteContact = (id) => {
+  const handleToDeleteContact = () => {
     dispatch(deleteContact(id));
   };
 
@@ -23,7 +23,7 @@ export default function Contact({ data: { id, name, number } }) {
           <a href={`tel: + ${number}`}>{number}</a>
         </div>
       </div>
-      <button onClick={handleToDeleteContact(id)} className={css.btn}>
+      <button onClick={handleToDeleteContact} className={css.btn}>
         Delete
       </button>
     </>
